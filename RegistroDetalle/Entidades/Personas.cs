@@ -17,7 +17,18 @@ namespace RegistroDetalle.Entidades
         public String Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
-        public virtual List<TelefonosDetalle> Telefonos { get; set }
-    
+        public virtual List<TelefonosDetalle> Telefonos { get; set; }
+
+        public Personas()
+        {
+            PersonaID = 0;
+            Nombre = string.Empty;
+            Cedula = string.Empty;
+            Direccion = string.Empty;
+            FechaNacimiento = DateTime.Now;
+
+            Telefonos = new List<TelefonosDetalle>();
+        }
+
     }
 }

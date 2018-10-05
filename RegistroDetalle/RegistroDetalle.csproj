@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Personas.cs" />
+    <Compile Include="Entidades\TelefonosDetalle.cs" />
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
     </Compile>
