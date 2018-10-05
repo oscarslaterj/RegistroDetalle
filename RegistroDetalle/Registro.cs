@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistroDetalle.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,39 +13,27 @@ namespace RegistroDetalle
 {
     public partial class Registro : Form
     {
+        public List<TelefonosDetalle> Detalle { get; set; }
+
         public Registro()
         {
             InitializeComponent();
-        }
+            this.Detalle = new List<TelefonosDetalle>();
+        } 
+        
 
-        private void Registro_Load(object sender, EventArgs e)
+        public void Limpiar ()
         {
+            MyErrorProvider.Clear();
+            IDnumericUpDown.Value = 0;
+            NombreTextBox.Text = string.Empty;
+            CedulaMaskedTextBox.Text = string.Empty;
+            DireccionTextBox.Text = string.Empty;
+            FechaDateTimePicker.Value = DateTime.Now;
 
+            this.Detalle = new List<TelefonosDetalle>();
+            CargarGrid();
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

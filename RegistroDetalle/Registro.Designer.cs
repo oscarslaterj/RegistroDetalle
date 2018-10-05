@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.BuscarButton = new System.Windows.Forms.Button();
@@ -51,8 +52,10 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,7 +92,7 @@
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+          
             // 
             // label3
             // 
@@ -99,7 +102,7 @@
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Direccion";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // label4
             // 
@@ -109,7 +112,7 @@
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Cedula";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+          
             // 
             // label5
             // 
@@ -119,7 +122,7 @@
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Agregar Telefonos";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+          
             // 
             // label6
             // 
@@ -129,7 +132,7 @@
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Tipo";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+ 
             // 
             // label7
             // 
@@ -261,6 +264,10 @@
             this.AgregarButton.Text = "+";
             this.AgregarButton.UseVisualStyleBackColor = false;
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,9 +298,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Registro";
             this.Text = "Registro de Personas";
-            this.Load += new System.EventHandler(this.Registro_Load);
+        
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,6 +332,7 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button AgregarButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
 
