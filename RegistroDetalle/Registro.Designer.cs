@@ -50,6 +50,7 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.AgregarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,7 @@
             // 
             // BuscarButton
             // 
-            this.BuscarButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BuscarButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BuscarButton.Location = new System.Drawing.Point(111, 5);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(92, 32);
@@ -250,12 +251,23 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = false;
             // 
+            // AgregarButton
+            // 
+            this.AgregarButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.AgregarButton.Location = new System.Drawing.Point(352, 150);
+            this.AgregarButton.Name = "AgregarButton";
+            this.AgregarButton.Size = new System.Drawing.Size(25, 23);
+            this.AgregarButton.TabIndex = 22;
+            this.AgregarButton.Text = "+";
+            this.AgregarButton.UseVisualStyleBackColor = false;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(390, 418);
+            this.Controls.Add(this.AgregarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -311,6 +323,7 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button AgregarButton;
     }
 }
 
