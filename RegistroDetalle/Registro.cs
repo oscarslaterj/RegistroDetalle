@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RegistroDetalle.BLL;
 using RegistroDetalle.DAL;
+using RegistroDetalle.UI;
+using RegistroDetalle.UI.Registros;
 
 namespace RegistroDetalle
 {
@@ -111,6 +113,7 @@ namespace RegistroDetalle
             CargarGrid();
             TelefonoMaskedTextBox.Focus();
             TelefonoMaskedTextBox.Clear();
+            TipoComboBox.Items.Clear();
           
         }
 
@@ -121,6 +124,12 @@ namespace RegistroDetalle
                 Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
                     CargarGrid();
             }
+        }
+
+        private void tiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rDetalle registro = new rDetalle();
+            registro.ShowDialog();
         }
     }
 }

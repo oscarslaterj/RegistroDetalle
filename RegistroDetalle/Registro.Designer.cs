@@ -183,6 +183,7 @@
             // 
             // TipoComboBox
             // 
+            this.TipoComboBox.AllowDrop = true;
             this.TipoComboBox.FormattingEnabled = true;
             this.TipoComboBox.Location = new System.Drawing.Point(50, 152);
             this.TipoComboBox.Name = "TipoComboBox";
@@ -283,6 +284,7 @@
             this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
             this.tiposToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.tiposToolStripMenuItem.Text = "Tipos";
+            this.tiposToolStripMenuItem.Click += new System.EventHandler(this.tiposToolStripMenuItem_Click);
             // 
             // Registro
             // 
