@@ -24,5 +24,10 @@ namespace RegistroDetalle.Entidades
             Telefono = string.Empty;
         }
 
+        public TelefonosDetalle(object p, int idPersona, string telefono, string tipoTelefono)
+        {
+            Telefono = telefono;
+            TipoTelefono = tipoTelefono;
+        }
     }
 }

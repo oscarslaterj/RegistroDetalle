@@ -53,15 +53,18 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(9, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
@@ -69,7 +72,7 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(37, 13);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(79, 21);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(52, 20);
             this.IDnumericUpDown.TabIndex = 1;
@@ -77,7 +80,7 @@
             // BuscarButton
             // 
             this.BuscarButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BuscarButton.Location = new System.Drawing.Point(111, 5);
+            this.BuscarButton.Location = new System.Drawing.Point(277, 9);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(92, 32);
             this.BuscarButton.TabIndex = 2;
@@ -92,7 +95,6 @@
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre";
-          
             // 
             // label3
             // 
@@ -102,7 +104,6 @@
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Direccion";
-           
             // 
             // label4
             // 
@@ -112,7 +113,6 @@
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Cedula";
-          
             // 
             // label5
             // 
@@ -122,7 +122,6 @@
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Agregar Telefonos";
-          
             // 
             // label6
             // 
@@ -132,7 +131,6 @@
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Tipo";
- 
             // 
             // label7
             // 
@@ -160,7 +158,7 @@
             // CedulaMaskedTextBox
             // 
             this.CedulaMaskedTextBox.Location = new System.Drawing.Point(246, 152);
-            this.CedulaMaskedTextBox.Mask = "999-9999999-9";
+            this.CedulaMaskedTextBox.Mask = "999-999-9999";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.CedulaMaskedTextBox.TabIndex = 15;
@@ -223,6 +221,7 @@
             this.RemoverButton.TabIndex = 18;
             this.RemoverButton.Text = "Remover Fila";
             this.RemoverButton.UseVisualStyleBackColor = false;
+            this.RemoverButton.Click += new System.EventHandler(this.RemoverButton_Click);
             // 
             // NuevoButton
             // 
@@ -263,17 +262,34 @@
             this.AgregarButton.TabIndex = 22;
             this.AgregarButton.Text = "+";
             this.AgregarButton.UseVisualStyleBackColor = false;
+            this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tiposToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(392, 24);
+            this.menuStrip1.TabIndex = 23;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tiposToolStripMenuItem
+            // 
+            this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
+            this.tiposToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.tiposToolStripMenuItem.Text = "Tipos";
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(390, 418);
+            this.ClientSize = new System.Drawing.Size(392, 422);
             this.Controls.Add(this.AgregarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -296,12 +312,15 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Registro";
             this.Text = "Registro de Personas";
-        
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,6 +352,8 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button AgregarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tiposToolStripMenuItem;
     }
 }
 
