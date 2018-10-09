@@ -61,6 +61,18 @@ namespace RegistroDetalle
             return persona;
         }
 
+        private void LlenaCampo(Personas persona)
+        {
+            IDnumericUpDown.Value = persona.PersonaID;
+            NombreTextBox.Text = persona.Nombre;
+            CedulaMaskedTextBox.Text = persona.Cedula;
+            DireccionTextBox.Text = persona.Direccion;
+            FechaDateTimePicker.Value = persona.FechaNacimiento;
+
+            this.Detalle = persona.Telefonos;
+            CargarGrid();
+        }
+
         private void LlenaCampos(Personas persona)
         {
             IDnumericUpDown.Value = persona.PersonaID;
@@ -130,6 +142,28 @@ namespace RegistroDetalle
         {
             rDetalle registro = new rDetalle();
             registro.ShowDialog();
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            int id;
+            Personas persona = new Personas();
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            persona = PersonasBLL.Buscar(id);
+
+            if (persona != null)
+            {
+                MyErrorProvider.Clear();
+                this.LlenaCampo(persona);
+                MessageBox.Show("Persona Encotrada");
+
+            }
+            else
+            {
+                MessageBox.Show("Persona no Encotrada");
+            }
         }
     }
 }
