@@ -33,7 +33,6 @@ namespace RegistroDetalle
             DetalleDataGridView.DataSource = this.Detalle;
         }
 
-
         public void Limpiar ()
         {
             MyErrorProvider.Clear();
@@ -129,6 +128,13 @@ namespace RegistroDetalle
           
         }
 
+        private bool ExiteEnLaBaseDeDatos()
+        {
+            Personas persona = PersonasBLL.Buscar((int)IDnumericUpDown.Value);
+            return (persona != null);
+        }
+
+
         private void RemoverButton_Click(object sender, EventArgs e)
         {
             if(DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
@@ -163,7 +169,68 @@ namespace RegistroDetalle
             else
             {
                 MessageBox.Show("Persona no Encotrada");
+            }    
+
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            bool paso = false;
+            Personas persona;
+            if (!Validar())
+                return;
+            persona = LlenaClase();
+
+            if (IDnumericUpDown.Value == 0)
+                paso = PersonasBLL.Guardar(persona);
+            else
+            {
+                if (!ExiteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("Nose puede Modificar No Exite", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                paso = PersonasBLL.Modificar(persona);
             }
+            Limpiar();
+
+            if (paso)
+                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se pudo guardar!!", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            int id;
+
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            if (PersonasBLL.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado");
+            }
+            else
+                MyErrorProvider.SetError(IDnumericUpDown, "Persona no Exite");
+        }
+
+        private void TipoButton_Click(object sender, EventArgs e)
+        {
+            rDetalle tipo = new rDetalle();
+            tipo.ShowDialog();
+            tipo.Close();
+        }
+
+        private void LlenarComboBOx()
+        {
+            TipoComboBox.DataSource = PersonasBLL.GetList(x => true);
+            TipoComboBox.ValueMember = "Tipo";
         }
     }
 }

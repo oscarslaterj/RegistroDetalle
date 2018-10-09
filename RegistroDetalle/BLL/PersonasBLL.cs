@@ -32,6 +32,11 @@ namespace RegistroDetalle.BLL
             return paso;
         }
 
+        internal static bool Guardar(TelefonosDetalle tipo)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool Modificar(Personas personas)
         {
             bool paso = false;

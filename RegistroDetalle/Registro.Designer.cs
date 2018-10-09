@@ -53,12 +53,10 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TipoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +134,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(184, 156);
+            this.label7.Location = new System.Drawing.Point(191, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 8;
@@ -186,7 +184,7 @@
             // 
             this.TipoComboBox.AllowDrop = true;
             this.TipoComboBox.FormattingEnabled = true;
-            this.TipoComboBox.Location = new System.Drawing.Point(50, 152);
+            this.TipoComboBox.Location = new System.Drawing.Point(43, 152);
             this.TipoComboBox.Name = "TipoComboBox";
             this.TipoComboBox.Size = new System.Drawing.Size(121, 21);
             this.TipoComboBox.TabIndex = 14;
@@ -234,6 +232,7 @@
             this.NuevoButton.TabIndex = 19;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = false;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -244,6 +243,7 @@
             this.GuardarButton.TabIndex = 20;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = false;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -254,6 +254,7 @@
             this.EliminarButton.TabIndex = 21;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = false;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // AgregarButton
             // 
@@ -270,22 +271,15 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // menuStrip1
+            // TipoButton
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tiposToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(392, 24);
-            this.menuStrip1.TabIndex = 23;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tiposToolStripMenuItem
-            // 
-            this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
-            this.tiposToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.tiposToolStripMenuItem.Text = "Tipos";
-            this.tiposToolStripMenuItem.Click += new System.EventHandler(this.tiposToolStripMenuItem_Click);
+            this.TipoButton.Location = new System.Drawing.Point(170, 150);
+            this.TipoButton.Name = "TipoButton";
+            this.TipoButton.Size = new System.Drawing.Size(15, 23);
+            this.TipoButton.TabIndex = 23;
+            this.TipoButton.Text = "+";
+            this.TipoButton.UseVisualStyleBackColor = true;
+            this.TipoButton.Click += new System.EventHandler(this.TipoButton_Click);
             // 
             // Registro
             // 
@@ -293,6 +287,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(392, 422);
+            this.Controls.Add(this.TipoButton);
             this.Controls.Add(this.AgregarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -315,15 +310,11 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Registro";
             this.Text = "Registro de Personas";
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,8 +346,7 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button AgregarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem tiposToolStripMenuItem;
+        private System.Windows.Forms.Button TipoButton;
     }
 }
 
